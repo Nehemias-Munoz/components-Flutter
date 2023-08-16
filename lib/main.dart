@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_components/src/screens/error_screen.dart';
 import 'package:flutter_components/src/screens/screens.dart';
 
 void main() {
@@ -17,6 +18,9 @@ class MainApp extends StatelessWidget {
         "listview": (BuildContext context) => const ListView1Screen(),
         "alert": (context) => const AlertScreen(),
         "card": (context) => const CardScreen(),
+      },
+      onGenerateRoute: (settings) {
+        return MaterialPageRoute(builder: (context) => const ErrorScreen());
       },
     );
   }
