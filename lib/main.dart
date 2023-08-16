@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_components/src/routes/app_routes.dart';
 import 'package:flutter_components/src/screens/error_screen.dart';
 import 'package:flutter_components/src/screens/screens.dart';
 
@@ -12,16 +13,9 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: "home",
-      routes: {
-        "home": (context) => const HomeScreen(),
-        "listview": (BuildContext context) => const ListView1Screen(),
-        "alert": (context) => const AlertScreen(),
-        "card": (context) => const CardScreen(),
-      },
-      onGenerateRoute: (settings) {
-        return MaterialPageRoute(builder: (context) => const ErrorScreen());
-      },
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.routes,
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }
