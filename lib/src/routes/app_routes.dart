@@ -7,6 +7,11 @@ class AppRoutes {
 
   static final menuOption = <MenuOption>[
     MenuOption(
+        route: "home",
+        icon: Icons.home,
+        title: "Home Screen",
+        screen: const HomeScreen()),
+    MenuOption(
         route: "listview",
         icon: Icons.list,
         title: "Listview",
@@ -20,7 +25,7 @@ class AppRoutes {
         route: "card",
         icon: Icons.check_box_outline_blank_rounded,
         title: "Card",
-        screen: const Card()),
+        screen: const CardScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext context)> getRoutes() {
