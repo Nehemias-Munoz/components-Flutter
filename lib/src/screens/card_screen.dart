@@ -15,14 +15,18 @@ class CardScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 5.0),
         children: const [
           CustomCard1(),
-          SizedBox(
-            height: 10,
+          SizedBox(height: 10),
+          CustomCard2(
+            imageUrl:
+                'https://www.hdwallpapers.in/download/beautiful_lake_landscape_scenery_4k_8k-HD.jpg',
+            description: 'Montañas y lago',
           ),
-          CustomCard2(),
-          SizedBox(
-            height: 10,
+          SizedBox(height: 10),
+          CustomCard2(
+            imageUrl:
+                'https://free4kwallpapers.com/uploads/originals/2015/04/23/flower-with-mountain-landscape.jpg',
           ),
-          CustomCard2(),
+          SizedBox(height: 100)
         ],
       ),
     );
