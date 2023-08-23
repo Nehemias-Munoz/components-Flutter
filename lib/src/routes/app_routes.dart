@@ -7,11 +7,6 @@ class AppRoutes {
 
   static final menuOption = <MenuOption>[
     MenuOption(
-        route: "home",
-        icon: Icons.home,
-        title: "Home Screen",
-        screen: const HomeScreen()),
-    MenuOption(
         route: "listview",
         icon: Icons.list,
         title: "Listview",
@@ -42,6 +37,7 @@ class AppRoutes {
 
   static Map<String, Widget Function(BuildContext context)> getRoutes() {
     Map<String, Widget Function(BuildContext context)> routes = {};
+    routes.addAll({"home": (context) => const HomeScreen()});
     for (MenuOption element in menuOption) {
       routes.addAll({element.route: (context) => element.screen});
     }
