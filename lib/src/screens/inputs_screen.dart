@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/widgets.dart';
+
 class InputsScreen extends StatelessWidget {
   const InputsScreen({Key? key}) : super(key: key);
 
@@ -9,38 +11,34 @@ class InputsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Inputs and Form"),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              TextFormField(
-                decoration: const InputDecoration(
-                  hintText: "Ingrese un nombre",
-                  label: Text("Nombre"),
-                  helperText: "Solo letras",
-                  suffixIcon: Icon(Icons.group_add_outlined),
-                  prefixIcon: Icon(Icons.abc),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(10),
-                        topRight: Radius.circular(10)),
-                  ),
-                ),
-                autofocus: true,
-                initialValue: "Name",
-                textCapitalization: TextCapitalization.words,
-                onChanged: (value) {},
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: (value) {
-                  if (value == null) {
-                    return "Este campo es requerido";
-                  } else if (value.length < 3) {
-                    return "Minimo de 3 caracteres";
-                  } else {
-                    return null;
-                  }
-                },
+              CustomInputField(
+                textInputType: TextInputType.name,
+                labelText: "Nombre",
+                hintText: "Nombre del usuario",
+                prefixIconData: Icons.person,
+              ),
+              SizedBox(height: 20.0),
+              CustomInputField(
+                textInputType: TextInputType.name,
+                labelText: "Apellido",
+                hintText: "Apellido del usuario",
+              ),
+              SizedBox(height: 20.0),
+              CustomInputField(
+                textInputType: TextInputType.emailAddress,
+                labelText: "Email",
+                hintText: "Apellido del usuario",
+              ),
+              SizedBox(height: 20.0),
+              CustomInputField(
+                obscureText: true,
+                labelText: "Contraseña",
+                hintText: "Ingrese una contraseña",
               ),
             ],
           ),
