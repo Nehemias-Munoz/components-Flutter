@@ -8,6 +8,8 @@ class CustomInputField extends StatelessWidget {
   final IconData? prefixIconData;
   final TextInputType? textInputType;
   final bool obscureText;
+  final String formProperty;
+  final Map<String, String> formValues;
 
   const CustomInputField({
     super.key,
@@ -18,6 +20,8 @@ class CustomInputField extends StatelessWidget {
     this.prefixIconData,
     this.textInputType,
     this.obscureText = false,
+    required this.formProperty,
+    required this.formValues,
   });
 
   @override
@@ -38,7 +42,7 @@ class CustomInputField extends StatelessWidget {
       ),
       autofocus: true,
       textCapitalization: TextCapitalization.words,
-      onChanged: (value) {},
+      onChanged: (value) => formValues[formProperty] = value,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: (value) {
         if (value == null) {
