@@ -6,4 +6,5 @@ export 'package:flutter_components/src/screens/error_screen.dart';
 export 'package:flutter_components/src/screens/home_screen.dart';
 export 'package:flutter_components/src/screens/inputs_screen.dart';
 export 'package:flutter_components/src/screens/listview1_screen.dart';
+export 'package:flutter_components/src/screens/listview_builder_screen.dart';
 export 'package:flutter_components/src/screens/slider_screen.dart';
